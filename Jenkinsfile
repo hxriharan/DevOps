@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Shell Script') {
+        stage('Build') {
             steps {
                 git 'https://github.com/hxriharan/DevOps.git'
                 sh 'javac JavaHelloWorld'
