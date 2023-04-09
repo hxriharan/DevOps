@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/hxriharan/DevOps.git'
-                sh 'javac JavaHelloWorld'
+                sh 'javac JavaHelloWorld.java'
                 sh 'java JavaHelloWorld'
                 
             }
