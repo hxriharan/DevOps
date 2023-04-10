@@ -1,16 +1,22 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
+    stages{
+        stage('checking python version') {
             steps {
-                git 'https://github.com/hxriharan/DevOps.git'
-                sh 'javac JavaHelloWorld.java'
-                sh 'java JavaHelloWorld'
-                
+                bat 'python -V'
+            }
+        }
+
+        stage('REPO Cloning'){
+            steps {
+                bat 'xcopy /S "*" "D:/Coding Software/xampp/htdocs/devops_xampp_jenkins" /Y'
+            }
+        }
+
+        stage('Print done'){
+            steps{
+                echo 'Done!'
             }
         }
     }
-        
-    
 }
